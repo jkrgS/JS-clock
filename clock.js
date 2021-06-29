@@ -1,26 +1,38 @@
-//
-// This is only a SKELETON file for the 'Clock' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+const { setClock } = require('./helpers/clock');
 
-export class Clock {
-  constructor() {
-    throw new Error('Remove this statement and implement this function');
+class Clock {
+  constructor(hours, minutes) {
+    this.hours = hours; // getting hours that provided as arg
+    this.minutes = minutes; // getting minutes that provided as arg
   }
 
   toString() {
-    throw new Error('Remove this statement and implement this function');
+    // calling a method that expects hours & minutes that provided and returns the proper clock result
+    return setClock({ hours: this.hours, minutes: this.minutes });
   }
 
-  plus() {
-    throw new Error('Remove this statement and implement this function');
+  plus(minutes) {
+    // calculation of basic minutes that provided plus the additional one
+    const totalMinutes = this.minutes + minutes;
+    // calling a method that expects hours & minutes that provided and returns the proper clock result
+    return setClock({ hours: this.hours, minutes: totalMinutes });
   }
 
-  minus() {
-    throw new Error('Remove this statement and implement this function');
+  minus(minutes) {
+    // calculation of basic minutes that provided minus the additional one
+    const totalMinutes = this.minutes - minutes;
+    // calling a method that expects hours & minutes that provided and returns the proper clock result
+    return setClock({ hours: this.hours, minutes: totalMinutes });
   }
 
-  equals() {
-    throw new Error('Remove this statement and implement this function');
+  equals(_class) {
+    // represents the basic clock
+    const prevClock = setClock({ hours: this.hours, minutes: this.minutes });
+    // represents the additional clock that provided through the method
+    const newClock = setClock({ hours: _class.hours, minutes: _class.minutes });
+
+    return prevClock === newClock; // returns the equality as expected
   }
 }
+
+module.exports = { Clock };
