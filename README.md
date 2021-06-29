@@ -1,3 +1,5 @@
+![](assets/pink-panther-clock.gif)
+
 # Tech assignment: Clock
 
 This assignment is for gauging your knowledge of Javascript.
